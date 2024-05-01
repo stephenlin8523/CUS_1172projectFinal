@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1 Share a New Video
+  if errorMessage
+    p.error-message #{errorMessage}
+
+  form(action='/video/new', method='post')
+    div
+      label(for='title') Video Title:
+      input(type='text', name='title', required=true)
+    div
+      label(for='url') Video URL:
+      input(type='text', name='url', required=true)
+    div
+      button(type='submit') Add Video
+
+  a(href='/video/dashboard') Back to Dashboard

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 Dashboard
+  if videos && videos.length
+    ul
+      each video in videos
+        li
+          a(href=`/video/${video.id}`) #{video.title}
+  else
+    p No videos available.
